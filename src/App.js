@@ -12,12 +12,12 @@ function App() {
   });
 
   return (
-    <div className="App">
+    <main>
       <SearchBar />
       <div className="container">
         <Logs />
       </div>
-    </div>
+    </main>
   );
 }
 
