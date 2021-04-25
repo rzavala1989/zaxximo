@@ -6,7 +6,7 @@ const LogItem = (props) => {
     <li className="collection-item">
       <div>
         <a
-          href="#edit-log-modal"
+          href="#edit-modal"
           className={`modal-trigger ${
             props.log.attention ? "red-text" : "blue-text"
           }`}
@@ -16,7 +16,7 @@ const LogItem = (props) => {
         <br />
         <span className="grey-text">
           <span className="black-text">ID #{props.log.id}</span> assigned to{" "}
-          <span className="black-text">{props.log.tech}</span> on{" "}
+          <span className="black-text">{props.log.staff}</span> on{" "}
           <DayJS format="ddd, MMM D, YYYY, h:mm A">{props.log.date}</DayJS>
         </span>
         <a href="#!" className="secondary-content">
