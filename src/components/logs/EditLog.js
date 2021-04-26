@@ -1,12 +1,45 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { connect } from "react-redux";
+import { updateLog } from "../../actions/logActions";
+import M from "materialize-css/dist/js/materialize.min.js";
 
-const EditLog = () => {
+const EditLog = ({ current, updateLog }) => {
   const [message, setMessage] = useState("");
   const [attention, setAttention] = useState(false);
   const [staff, setStaff] = useState("");
 
+  useEffect(() => {
+    if (current) {
+      setMessage(current.message);
+      setAttention(current.attention);
+      setStaff(current.staff);
+    }
+  }, [current]);
   const onSubmit = () => {
-    console.log(message, staff, attention);
+    if (message === "" || staff === "") {
+      M.toast({ html: "Please fill out message and staff fields" });
+    } else {
+      const updated = {
+        id: current.id,
+        message,
+        attention,
+        staff,
+      };
+      updateLog(updated);
+      if (updated.message !== current.message) {
+        M.toast({
+          html: `"${current.message}" has been updated to "${updated.message}"`,
+        });
+      } else if (updated.staff !== current.staff) {
+        M.toast({
+          html: `"${current.message}" has been reassigned to ${updated.staff}`,
+        });
+      } else if (updated.attention !== current.attention) {
+        M.toast({
+          html: "Priority for the task has changed",
+        });
+      }
+    }
     setMessage("");
     setStaff("");
     setAttention(false);
@@ -14,7 +47,7 @@ const EditLog = () => {
   return (
     <div id="edit-modal" className="modal" style={modalStyle}>
       <div className="modal-content">
-        <h4>Enter System Log</h4>
+        <h4>Update System Log</h4>
         <div className="row">
           <div className="input-field">
             <input
@@ -23,9 +56,6 @@ const EditLog = () => {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
             />
-            <label htmlFor="message" className="active">
-              Log Message
-            </label>
           </div>
         </div>
 
@@ -82,4 +112,8 @@ const modalStyle = {
   height: "65%",
 };
 
-export default EditLog;
+const mapStatetoProps = (state) => ({
+  current: state.log.current,
+});
+
+export default connect(mapStatetoProps, { updateLog })(EditLog);

@@ -1,3 +1,12 @@
+<div class="input-field col s12">
+              <select>
+                <option value="" disabled selected>
+                  Sort By:
+                </option>
+                <option value="1">Option 1</option>
+              </select>
+            </div>
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

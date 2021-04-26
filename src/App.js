@@ -5,6 +5,9 @@ import AddButton from "./components/layout/AddButton";
 import AddLog from "./components/logs/AddLog";
 import EditLog from "./components/logs/EditLog";
 import AddStaff from "./components/staff/AddStaff";
+import StaffListModal from "./components/staff/StaffListModal";
+import { Provider } from "react-redux";
+import store from "./store";
 
 import "materialize-css/dist/css/materialize.min.css";
 import M from "materialize-css";
@@ -16,18 +19,21 @@ const App = () => {
   });
 
   return (
-    <Fragment>
-      <main>
-        <SearchBar />
-        <div className="container">
-          <AddButton />
-          <AddLog />
-          <EditLog />
-          <AddStaff />
-          <Logs />
-        </div>
-      </main>
-    </Fragment>
+    <Provider store={store}>
+      <Fragment>
+        <main>
+          <SearchBar />
+          <div className="container">
+            <AddButton />
+            <AddLog />
+            <EditLog />
+            <AddStaff />
+            <StaffListModal />
+            <Logs />
+          </div>
+        </main>
+      </Fragment>
+    </Provider>
   );
 };
 

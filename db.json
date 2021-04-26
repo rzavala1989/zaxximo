@@ -1,25 +1,16 @@
 {
   "logs": [
     {
-      "message": "Changed network card in server 007",
-      "attention": false,
-      "staff": "Dan Rather",
-      "date": "2019-05-31T15:46:10.179Z",
-      "id": 1
-    },
-    {
       "id": 2,
-      "message": "Fixed hard drive on workstation 002",
-      "attention": false,
-      "staff": "Pam Rather",
-      "date": "2019-05-31T16:18:04.245Z"
+      "message": "Fixed hard drive on workstation 0033343",
+      "attention": true,
+      "staff": "Jan Rather"
     },
     {
-      "message": "1122 wireless down",
-      "attention": true,
-      "staff": "Jan Rather",
-      "date": "2019-05-31T15:46:48.690Z",
-      "id": 3
+      "id": 3,
+      "message": "1122 wireless down as well",
+      "attention": false,
+      "staff": "Dan Rather"
     },
     {
       "id": 4,
@@ -27,6 +18,12 @@
       "attention": false,
       "staff": "Jan Rather",
       "date": "2019-05-31T19:57:35.544Z"
+    },
+    {
+      "id": 5,
+      "message": "Make the news great again!",
+      "attention": true,
+      "staff": "Jan Rather"
     }
   ],
   "staff": [
