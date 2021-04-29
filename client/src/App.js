@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect } from "react";
-import SearchBar from "./components/layout/SearchBar";
+import Navbar from "./components/layout/Navbar";
 import Logs from "./components/logs/Logs";
 import AddButton from "./components/layout/AddButton";
 import AddLog from "./components/logs/AddLog";
@@ -8,6 +8,7 @@ import AddStaff from "./components/staff/AddStaff";
 import StaffListModal from "./components/staff/StaffListModal";
 import { Provider } from "react-redux";
 import store from "./store";
+import SiteImage from "./components/layout/SiteImage";
 
 import "materialize-css/dist/css/materialize.min.css";
 import M from "materialize-css";
@@ -21,14 +22,19 @@ const App = () => {
   return (
     <Provider store={store}>
       <Fragment>
-        <SearchBar />
+        <Navbar />
         <div className="container">
-          <AddButton />
-          <AddLog />
-          <EditLog />
-          <AddStaff />
-          <StaffListModal />
-          <Logs />
+          <main className="primary">
+            <AddButton />
+            <AddLog />
+            <EditLog />
+            <AddStaff />
+            <StaffListModal />
+            <Logs />
+          </main>
+          <section className="secondary">
+            <SiteImage />
+          </section>
         </div>
       </Fragment>
     </Provider>

@@ -111,7 +111,7 @@ const EditLog = ({ log: { current }, updateLog }) => {
 
 const modalStyle = {
   width: "65%",
-  height: "65%",
+  height: "55%",
 };
 
 const mapStatetoProps = (state) => ({

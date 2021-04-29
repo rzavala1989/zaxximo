@@ -10,7 +10,8 @@
     "express-validator": "^6.10.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.12.5",
-    "mongoose-sequence": "^5.3.1"
+    "mongoose-sequence": "^5.3.1",
+    "react-transition-group": "^4.4.1"
   },
   "devDependencies": {
     "concurrently": "^6.0.2",

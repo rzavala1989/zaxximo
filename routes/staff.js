@@ -41,15 +41,14 @@ router.post(
       return res.status(400).json({ errors: errors.array() });
     }
     const { firstName, lastName, email, password } = req.body;
+    let newStaff = await Staff.findOne({ email });
 
     try {
-      let staff = await Staff.findOne({ email });
-
-      if (staff) {
+      if (newStaff) {
         return res.status(400).json({ msg: "staff member already exists" });
       }
 
-      staff = new Staff({
+      newStaff = new Staff({
         firstName,
         lastName,
         email,
@@ -57,31 +56,18 @@ router.post(
       });
 
       const salt = await bcrypt.genSalt(10);
-
-      staff.password = await bcrypt.hash(password, salt);
-
-      await staff.save();
-
-      const payload = {
-        staff: {
-          id: staff.id,
-        },
-      };
-
-      jwt.sign(
-        payload,
-        config.get("jwtSecret"),
-        {
-          expiresIn: 3600000,
-        },
-        (err, token) => {
-          if (err) throw err;
-          res.json({ token });
-        }
-      );
+      newStaff.password = await bcrypt.hash(password, salt);
+      const staff = await newStaff.save();
+      return res.status(201).json({
+        success: true,
+        data: staff,
+      });
     } catch (err) {
-      console.error(err.message);
-      res.status(500).send("Server Error");
+      if (newStaff) {
+        return res.status(400).json({ msg: "staff member already exists" });
+      } else {
+        res.status(500).send("Server Error");
+      }
     }
   }
 );

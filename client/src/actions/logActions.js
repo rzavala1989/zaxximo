@@ -98,7 +98,7 @@ export const deleteLog = (id) => async (dispatch) => {
   try {
     setLoading();
 
-    await fetch(`api/logs/${id}`, { method: "delete" });
+    await fetch(`/api/logs/${id}`, { method: "delete" });
 
     dispatch({ type: DELETE_LOG, payload: id });
   } catch (err) {

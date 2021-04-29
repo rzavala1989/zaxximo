@@ -104,7 +104,7 @@ const AddStaff = ({ addStaff }) => {
 
 const modalStyle = {
   width: "45%",
-  height: "45%",
+  height: "65%",
 };
 
 export default connect(null, { addStaff })(AddStaff);

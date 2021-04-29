@@ -7,6 +7,11 @@ import M from "materialize-css/dist/js/materialize.min.js";
 const LogItem = ({ log, deleteLog, setCurrent }) => {
   const { attention, id, _id, message, staff, date } = log;
 
+  document.addEventListener("DOMContentLoaded", function () {
+    var elems = document.querySelectorAll(".tooltipped");
+    M.Tooltip.init(elems);
+  });
+
   const onDelete = () => {
     deleteLog(_id);
     M.toast({ html: "Log deleted from tasks" });
@@ -22,7 +27,9 @@ const LogItem = ({ log, deleteLog, setCurrent }) => {
         <a
           onClick={onEdit}
           href="#edit-modal"
-          className={`modal-trigger ${
+          data-position="left"
+          data-tooltip="Edit or reassign task"
+          className={`modal-trigger tooltipped ${
             attention ? "grey lighten-1 completed" : "red-text"
           }`}
         >
@@ -33,7 +40,16 @@ const LogItem = ({ log, deleteLog, setCurrent }) => {
           <span className="black-text">ID #{id}</span> assigned to{" "}
           <span className="black-text">{staff}</span> on{" "}
           <DayJS format="ddd, MMM D, YYYY, h:mm A">{date}</DayJS>
-          {attention ? <span className="green accent-4>">Completed!</span> : ""}
+          {attention ? (
+            <span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+              <span id="completed-text" className="red darken-4>">
+                &nbsp;Completed!&nbsp;
+              </span>
+            </span>
+          ) : (
+            ""
+          )}
         </span>
         <a onClick={onDelete} href="#!" className="secondary-content">
           <i className="material-icons grey-text">delete</i>
