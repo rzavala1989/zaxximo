@@ -1,11 +1,11 @@
-<div class="input-field col s12">
+<!-- <div class="input-field col s12">
               <select>
                 <option value="" disabled selected>
                   Sort By:
                 </option>
                 <option value="1">Option 1</option>
               </select>
-            </div>
+            </div> -->
 
 # Getting Started with Create React App
 

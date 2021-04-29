@@ -1,12 +1,6 @@
 {
   "logs": [
     {
-      "id": 2,
-      "message": "Fixed hard drive on workstation 0033343",
-      "attention": true,
-      "staff": "Jan Rather"
-    },
-    {
       "id": 3,
       "message": "1122 wireless down as well",
       "attention": false,
@@ -15,15 +9,14 @@
     {
       "id": 4,
       "message": "Workstation 026 is up and running",
-      "attention": false,
-      "staff": "Jan Rather",
-      "date": "2019-05-31T19:57:35.544Z"
+      "attention": true,
+      "staff": "Jan Rather"
     },
     {
       "id": 5,
       "message": "Make the news great again!",
-      "attention": true,
-      "staff": "Jan Rather"
+      "attention": false,
+      "staff": "Dan Rather"
     }
   ],
   "staff": [
@@ -42,16 +35,11 @@
       "password": "janrather"
     },
     {
-      "id": 3,
-      "firstName": "Pam",
-      "lastName": "Rather",
-      "email": "pamrather@gmail.com",
-      "password": "pamrather"
-    },
-    {
-      "firstName": "Jen",
-      "lastName": "Williams",
-      "id": 7
+      "firstName": "Ricardo",
+      "lastName": "Zavala",
+      "email": "ricardozavala@gmail.com",
+      "password": "ricardozavala",
+      "id": 8
     }
   ]
 }

@@ -1,0 +1,90 @@
+.App {
+  text-align: center;
+}
+
+body {
+  background-color: black;
+}
+/* div.container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+} */
+
+#t-head-icon {
+  float: right;
+}
+
+.completed {
+  text-decoration: line-through;
+}
+
+.highlight {
+  -webkit-transition: background-color 0.25s ease;
+  transition: background-color 0.25s ease;
+}
+
+.highlight:hover {
+  background-color: rgb(252, 193, 193);
+}
+.tt-helper {
+  right: -348px;
+  bottom: -327px;
+  position: fixed;
+}
+
+.tt-content-helper {
+  width: 456px;
+  height: 400px;
+  inset: 0px;
+  padding: 56px;
+  vertical-align: bottom;
+}
+
+.tt-wave-helper {
+  top: 344px;
+  left: 344px;
+  width: 112px;
+  height: 112px;
+}
+
+#zaxximo-logo {
+  font-family: "Antonio", sans serif;
+  margin-left: 3%;
+  font-size: 3rem;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
